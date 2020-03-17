@@ -1,10 +1,10 @@
 FROM ubuntu:zesty
 
 # Add repos
-RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ zesty multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ zesty multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb http://us.archive.ubuntu.com/ubuntu/ zesty-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ zesty-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+RUN echo 'deb http://archive.ubuntu.com/ubuntu/ zesty multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb-src http://archive.ubuntu.com/ubuntu/ zesty multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb http://archive.ubuntu.com/ubuntu/ zesty-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb-src http://archive.ubuntu.com/ubuntu/ zesty-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
 	echo 'deb http://archive.ubuntu.com/ubuntu/ zesty-security multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
 	echo 'deb-src http://archive.ubuntu.com/ubuntu/ zesty-security multiverse' >> /etc/apt/sources.list.d/multiverse.list
 
@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y \
 	python-cups \
 && rm -rf /var/lib/apt/lists/*
 
-# This will use port 631
-EXPOSE 631
+# This will use port 632
+EXPOSE 632
 
 # We want a mount for these
 VOLUME /config
